@@ -27,7 +27,7 @@ class EventsRepository extends ServiceEntityRepository
    public function findByTypeFunction($value): array
    {
        return $this->createQueryBuilder('e')
-           ->andWhere('e.type == :val')
+           ->andWhere('e.type = :val')
            ->setParameter('val', $value)
            ->getQuery()
            ->getResult()

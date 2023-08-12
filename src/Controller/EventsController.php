@@ -87,20 +87,6 @@ class EventsController extends AbstractController
         return $this->render('events/type.html.twig', [
             'events' => $events
         ]);
-    
-    /*#[Route('/{type}', name: 'app_events_type')]
-    public function type(EventsRepository $eventsRepository, $type): Response
-    {
-        $product = $eventsRepository->find($type);
-        return $this->render("events//type.html.twig",[
-            "event"=>$product
-        ]);
-        /*$event = $eventsRepository->findBy(
-            ['type' => $type]
-        );
-        return $this->render('events/type.html.twig', [
-            'events' => $event
-        ]);*/
     }
 
 }
