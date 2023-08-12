@@ -1,0 +1,29 @@
+{# {% extends 'base.html.twig' %}
+
+{% block title %}Events index{% endblock %}
+
+{% block body %}
+    <h1>Events index</h1>
+    <div class="container">
+        <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-xs-1">
+            {% for event in events %}
+            <div>
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ event.image }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ event.name }}</h5>
+                      <p class="card-text">{{ event.startTime ? event.startTime|date('Y-m-d H:i:s') : '' }}</p>
+                      <a class="btn btn-primary" href="{{ path('app_events_show', {'id': event.id}) }}">show</a>
+                      <a class="btn btn-warning" href="{{ path('app_events_edit', {'id': event.id}) }}">edit</a>
+                    </div>
+                  </div>
+            </div>
+            {% else %}
+                <div>
+                    <p>no events found.</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <a class="btn btn-success" href="{{ path('app_events_new') }}">Create new</a>
+{% endblock %} #}
