@@ -78,15 +78,14 @@ class EventsController extends AbstractController
         return $this->redirectToRoute('app_events_index', [], Response::HTTP_SEE_OTHER);
     }
 
-    #[Route('/{type}', name: 'app_events_type')]
+    #[Route('/filter/{type}', name: 'app_events_type')]
     public function type(EventsRepository $eventsRepository, $type): Response
     {
         $events = $eventsRepository->findByTypeFunction($type);
-        dd($events);
 
         return $this->render('events/type.html.twig', [
             'events' => $events
         ]);
     }
-
+    
 }
